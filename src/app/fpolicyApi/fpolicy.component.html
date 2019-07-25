@@ -1,0 +1,51 @@
+<h1>POLICY TABLE INFORMATIONS</h1>
+<mat-form-field>
+  <input
+    matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Filter"
+  />
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table matSort [dataSource]="dataSource">
+    <ng-container matColumnDef="fpolicyId">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.fpolicyId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="policyHolderName">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.policyHolderName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="policyHolderAge">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>AGE</th>
+      <td mat-cell *matCellDef="let element">{{ element.policyHolderAge }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>ACTION</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button id="edit" (click)="editPolicy(element)">
+          EDIT
+        </button>
+        |
+        <button
+          mat-raised-button
+          id="delete"
+          (click)="deletePolicy(element.fpolicyId)"
+        >
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

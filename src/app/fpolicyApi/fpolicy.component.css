@@ -1,0 +1,66 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: steelblue;
+  color: black;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  height: 20px;
+}
+
+.mat-header-cell {
+  text-align: center;
+  background-color: green;
+  font-weight: bolder;
+  font-size: 20px;
+  color: black;
+}
+
+.mat-sort-header {
+  text-align: center;
+}
+
+.mat-cell {
+  width: 25%;
+}
+
+tr:nth-child(even) {
+  background-color: yellowgreen;
+  color: black;
+}
+
+.mat-form-field {
+  float: right;
+}
+
+.mat-paginator {
+  background-color: darkslategray !important;
+}
+
+#delete {
+  background-color: orangered;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#edit {
+  background-color: rgb(153, 0, 255);
+  font-weight: bold;
+  font-size: 15px;
+}
